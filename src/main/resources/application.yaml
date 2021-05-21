@@ -1,0 +1,17 @@
+spring:
+  main:
+    web-application-type: reactive
+  application.name: demo
+  cloud:
+    stream:
+      function:
+        definition: accumulate;receive;send
+      bindings:
+        send-out-0:
+          destination: ints
+        receive-in-0:
+          destination: total
+        accumulate-in-0:
+          destination: ints
+        accumulate-out-0:
+          destination: total
